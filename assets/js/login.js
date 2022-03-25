@@ -5,10 +5,10 @@ login = {
         document.getElementById('loginButton').addEventListener('click', this.checkLoginJWT);
     },
 
-    checkLoginJWT: function(e) {
+    checkLoginJWT: function(emailId = 'loginEmail', passwordId = 'passwordEmail') {
             // Form value
-            const emailValue = document.getElementById('loginEmail').value;
-            const passwordValue = document.getElementById('loginPassword').value;
+            const emailValue = document.getElementById(emailId).value;
+            const passwordValue = document.getElementById(passwordId).value;
 
             //API params
             let config = {
@@ -36,8 +36,9 @@ login = {
             .then(
                 function(token) {
                     localStorage.setItem('token', JSON.stringify(token));
-                    login.displaySuccess();
+                    // login.displaySuccess();
                     login.navDisplay();
+                    window.location.href = "/reservations.php"
                 }
             )
             .catch(
