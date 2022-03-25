@@ -1,6 +1,7 @@
 login = {
     init: function() {
         console.log('login init');
+        this.navDisplay();
         document.getElementById('logginButton').addEventListener('click', this.checkLoginJWT);
     },
 
@@ -57,6 +58,31 @@ login = {
             console.log(errorElement);
             modalBodyElement.appendChild(errorElement);
 
+        }
+    },
+
+    displaySuccess: function() {
+        const modalBodyElement = document.querySelector('.modal-body');
+
+        if (document.getElementById('errorLogin')) {
+            document.getElementById('logginButton').remove();
+        }
+        if (document.getElementById('successLogin') == undefined) {
+            const successElement = document.createElement('div');
+            successElement.classList.add('alert', 'alert-success');
+            successElement.id = 'successLogin';
+            successElement.textContent = 'Connexion réussie';
+            modalBodyElement.appendChild(successElement);
+        }
+    },
+
+    // Chande the nav-links if user is logged
+    navDisplay: function() {
+        if (localStorage.getItem('token')) {
+            document.getElementById('logginLink').classList.add('hidden');
+            document.getElementById('registerLink').classList.add('hidden');
+            document.getElementById('loggoutLink').classList.remove('hidden');
+            document.getElementById('reservationLink').classList.remove('hidden');
         }
     }
 }

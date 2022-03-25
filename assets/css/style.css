@@ -42,3 +42,7 @@ a {
     background-color: var(--dark-color);
 }
 
+.hidden {
+    display: none;
+}
+
