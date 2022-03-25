@@ -4,7 +4,7 @@ login = {
         document.getElementById('logginButton').addEventListener('click', this.checkLoginJWT);
     },
 
-    checkLoginJWT: function() {
+    checkLoginJWT: function(e) {
             // Form value
             const emailValue = document.getElementById('loginEmail').value;
             const passwordValue = document.getElementById('loginPassword').value;
@@ -35,13 +35,28 @@ login = {
             .then(
                 function(token) {
                     localStorage.setItem('token', JSON.stringify(token));
+                    login.displaySuccess();
                 }
             )
             .catch(
                 function(error) {
                     console.log(error.status);
+                    login.displayError();
                 }
             );
 
     },
+
+    displayError: function() {
+        if (document.getElementById('errorLogin') == undefined) {
+            const modalBodyElement = document.querySelector('.modal-body');
+            const errorElement = document.createElement('div');
+            errorElement.classList.add('alert', 'alert-danger');
+            errorElement.id = 'errorLogin';
+            errorElement.textContent = 'Identifiants invalides';
+            console.log(errorElement);
+            modalBodyElement.appendChild(errorElement);
+
+        }
+    }
 }

@@ -49,7 +49,7 @@
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Annuler</button>
-                            <button type="button" id="logginButton" class="btn btn-secondary" data-bs-dismiss="modal">Valider</button>
+                            <button type="button" id="logginButton" class="btn btn-secondary">Valider</button>
                         </div>
                     </div>
                     </div>
