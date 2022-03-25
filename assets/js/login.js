@@ -2,51 +2,57 @@ login = {
     init: function() {
         console.log('login init');
         this.navDisplay();
-        document.getElementById('loginButton').addEventListener('click', this.checkLoginJWT);
+        document.getElementById('loginButton').addEventListener('click', this.login);
     },
 
-    checkLoginJWT: function(emailId = 'loginEmail', passwordId = 'passwordEmail') {
-            // Form value
-            const emailValue = document.getElementById(emailId).value;
-            const passwordValue = document.getElementById(passwordId).value;
+    login: function() {
+        login.checkLoginJWT('loginEmail', 'loginPassword');
+    },
 
-            //API params
-            let config = {
-                method: 'POST',
-                mode: 'cors',
-                cache: 'no-cache',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    username: emailValue,
-                    password: passwordValue
-                })
-            };
-            
-            // Consuming API
-            fetch(app.apiRootUrl + '/login_check', config)
-            .then(
-                function(response) {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        throw response;
-                    }
+    checkLoginJWT: function(emailId, passwordId) {
+
+        console.log(emailId), passwordId;
+        // Form value
+        const emailValue = document.getElementById(emailId).value;
+        const passwordValue = document.getElementById(passwordId).value;
+
+        //API params
+        let config = {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: emailValue,
+                password: passwordValue
+            })
+        };
+        
+        // Consuming API
+        fetch(app.apiRootUrl + '/login_check', config)
+        .then(
+            function(response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw response;
                 }
-            )
-            .then(
-                function(token) {
-                    localStorage.setItem('token', JSON.stringify(token));
-                    // login.displaySuccess();
-                    login.navDisplay();
-                    window.location.href = "/reservations.php"
-                }
-            )
-            .catch(
-                function(error) {
-                    console.log(error.status);
-                    login.displayError();
-                }
-            );
+            }
+        )
+        .then(
+            function(token) {
+                localStorage.setItem('token', JSON.stringify(token));
+                // login.displaySuccess();
+                login.navDisplay();
+                window.location.href = "/reservations.php"
+            }
+        )
+        .catch(
+            function(error) {
+                console.log(error.status);
+                login.displayError();
+            }
+        );
 
     },
 
