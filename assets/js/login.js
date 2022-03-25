@@ -2,7 +2,7 @@ login = {
     init: function() {
         console.log('login init');
         this.navDisplay();
-        document.getElementById('logginButton').addEventListener('click', this.checkLoginJWT);
+        document.getElementById('loginButton').addEventListener('click', this.checkLoginJWT);
     },
 
     checkLoginJWT: function(e) {
@@ -37,6 +37,7 @@ login = {
                 function(token) {
                     localStorage.setItem('token', JSON.stringify(token));
                     login.displaySuccess();
+                    login.navDisplay();
                 }
             )
             .catch(
@@ -65,7 +66,7 @@ login = {
         const modalBodyElement = document.querySelector('.modal-body');
 
         if (document.getElementById('errorLogin')) {
-            document.getElementById('logginButton').remove();
+            document.getElementById('loginButton').remove();
         }
         if (document.getElementById('successLogin') == undefined) {
             const successElement = document.createElement('div');
@@ -79,9 +80,9 @@ login = {
     // Chande the nav-links if user is logged
     navDisplay: function() {
         if (localStorage.getItem('token')) {
-            document.getElementById('logginLink').classList.add('hidden');
+            document.getElementById('loginLink').classList.add('hidden');
             document.getElementById('registerLink').classList.add('hidden');
-            document.getElementById('loggoutLink').classList.remove('hidden');
+            document.getElementById('logoutLink').classList.remove('hidden');
             document.getElementById('reservationLink').classList.remove('hidden');
         }
     }

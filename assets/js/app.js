@@ -3,6 +3,7 @@ const app = {
 
     init: function(){
        login.init(); 
+       logout.init();
     }
 }
 
