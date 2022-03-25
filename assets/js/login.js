@@ -8,7 +8,7 @@ login = {
             // Form value
             const emailValue = document.getElementById('loginEmail').value;
             const passwordValue = document.getElementById('loginPassword').value;
-            
+
             //API params
             let config = {
                 method: 'POST',
@@ -24,13 +24,22 @@ login = {
             // Consuming API
             fetch(app.apiRootUrl + '/login_check', config)
             .then(
-                response => {
-                    return response.json();
+                function(response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw response;
+                    }
                 }
             )
             .then(
                 function(token) {
-                    console.log(token);
+                    localStorage.setItem('token', JSON.stringify(token));
+                }
+            )
+            .catch(
+                function(error) {
+                    console.log(error.status);
                 }
             );
 
