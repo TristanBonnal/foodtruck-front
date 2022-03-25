@@ -1,5 +1,5 @@
 <?php require 'templates/header.tpl.php' ?>
-<h2 class="title">Renseignez les champs pour vous incrire</h2>
+<h3 class="title">Renseignez les champs pour vous incrire</h3>
 <form>
     <div class="mb-3">
         <label class="mb-2" for="InputEmail1" class="form-label">Adresse email</label>
