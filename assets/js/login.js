@@ -5,6 +5,10 @@ login = {
     },
 
     checkLoginJWT: function() {
+            // Form value
+            const emailValue = document.getElementById('loginEmail').value;
+            const passwordValue = document.getElementById('loginPassword').value;
+            
             //API params
             let config = {
                 method: 'POST',
@@ -12,15 +16,17 @@ login = {
                 cache: 'no-cache',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    username: "bonnal.tristan91@gmail.com",
-                    password: "secret"
+                    username: emailValue,
+                    password: passwordValue
                 })
             };
             
             // Consuming API
             fetch(app.apiRootUrl + '/login_check', config)
             .then(
-                response => response.json()
+                response => {
+                    return response.json();
+                }
             )
             .then(
                 function(token) {

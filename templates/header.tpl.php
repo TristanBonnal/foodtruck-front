@@ -32,14 +32,14 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form id="loginForm">
                                     <div class="mb-3">
-                                      <label class="mb-2" for="InputEmail1" class="form-label">Adresse email</label>
-                                      <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp">
+                                      <label class="mb-2" for="loginEmail" class="form-label">Adresse email</label>
+                                      <input type="email" class="form-control" id="loginEmail">
                                     </div>
                                     <div class="mb-3">
-                                      <label class="mb-2" for="InputPassword1" class="form-label">Mot de passe</label>
-                                      <input type="password" class="form-control" id="InputPassword1">
+                                      <label class="mb-2" for="loginPassword" class="form-label">Mot de passe</label>
+                                      <input type="password" class="form-control" id="loginPassword">
                                     </div>
                                     <p class="text-center">
                                         Pas encore inscrit ?<br>
