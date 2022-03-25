@@ -3,7 +3,7 @@
 <form>
     <div class="mb-3">
         <label class="mb-2" for="InputEmail1" class="form-label">Adresse email</label>
-        <input type="email" class="form-control" id="InputEmail1" >
+        <input type="email" class="form-control" id="Email" >
     </div>
     <div class="mb-3">
         <label class="mb-2" for="lastname" class="form-label">Nom</label>
