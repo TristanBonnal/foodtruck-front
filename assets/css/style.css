@@ -1,0 +1,44 @@
+/* bootsrap style */
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}
+
+
+/* custom css */
+:root {
+    --main-color: rgb(146, 226, 226);
+    --dark-color: rgb(33, 37, 41, 1)
+}
+
+a {
+    text-decoration: none;
+    color: rgb(137, 138, 140,1);
+}
+
+.main, .btn-secondary:hover, a:hover, a.nav-link:hover, .title, .modal-title {
+    color:var(--main-color);
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+}
+
+.btn-secondary {
+    color: var(--dark-color);
+    background-color: white;
+}
+
+.modal-content {
+    background-color: var(--dark-color);
+}
+
