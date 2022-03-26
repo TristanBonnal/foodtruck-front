@@ -12,5 +12,6 @@
         <script src="assets/js/login.js"></script>
         <script src="assets/js/logout.js"></script>
         <script src="assets/js/reservation.js"></script>
+        <script src="assets/js/user.js"></script>
     </body>
 </html>

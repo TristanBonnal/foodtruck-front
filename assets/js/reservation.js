@@ -13,6 +13,7 @@ reservation = {
         } else {
             document.getElementById('reservationSection').classList.toggle('hidden');
             document.getElementById('introSection').classList.toggle('hidden');
+            user.init()
             reservation.fetchReservations();
         }
     },

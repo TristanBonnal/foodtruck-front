@@ -9,6 +9,8 @@
         </p>
     </section>
     <section class="hidden" id="reservationSection">
+        <h5 id="welcome"></h5>
+
         <h3 class="title">Vos réservations</h3>
         <table class="table table-dark">
             <thead>
