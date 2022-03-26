@@ -24,7 +24,7 @@
                 <a class="nav-link" aria-current="page" href="/">Accueil</a>
                 <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#Modal" id="loginLink">Connexion</a>
                 <a class="nav-link" aria-current="page" href="register.php" id="registerLink">Inscription</a>
-                <a class="nav-link hidden" aria-current="page" href="/" id="logoutLink">Déconnexion</a>
+                <a class="nav-link hidden" aria-current="page" href="" id="logoutLink">Déconnexion</a>
                 <a class="nav-link hidden" aria-current="page" href="reservations.php" id="reservationLink">Réservations</a>
                 <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">

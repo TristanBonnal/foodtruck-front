@@ -1,11 +1,11 @@
 signup = {
     init: function() {
+        console.log('signup init')
         document.getElementById('signupButton').addEventListener('click', this.register);
     },
 
     register: function(e) {
         e.preventDefault();
-        console.log('click register');
         // Form value
         const emailValue = document.getElementById('signupEmail').value;
         const lastnameValue = document.getElementById('signupLastname').value;
@@ -47,7 +47,7 @@ signup = {
         )
         .catch(
             function(error) {
-                console.log(error.status);
+                
             }
         );
     }

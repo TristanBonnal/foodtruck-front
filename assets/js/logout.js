@@ -1,9 +1,12 @@
 logout = {
     init: function() {
-        document.getElementById('logoutLink').addEventListener('click', this.deleteToken);
+        const logoutElement = document.getElementById('logoutLink').addEventListener('click', this.deleteToken);
+       (console.log('logout init'));
     },
 
-    deleteToken: function() {
+    deleteToken: function(e) {
+        e.preventDefault();
         localStorage.clear();
+        window.location.href = "/"
     },
 }

@@ -5,6 +5,7 @@ const app = {
        login.init(); 
        logout.init();
        signup.init();
+       test.init();
     }
 }
 

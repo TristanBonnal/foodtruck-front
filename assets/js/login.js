@@ -1,8 +1,9 @@
 login = {
     init: function() {
-        console.log('login init');
+        console.log('login init')
         this.navDisplay();
         document.getElementById('loginButton').addEventListener('click', this.login);
+        document.getElementById('reserveButton').addEventListener('click', this.reserveButtonDisplay)
     },
 
     login: function() {
@@ -11,7 +12,6 @@ login = {
 
     checkLoginJWT: function(emailId, passwordId) {
 
-        console.log(emailId), passwordId;
         // Form value
         const emailValue = document.getElementById(emailId).value;
         const passwordValue = document.getElementById(passwordId).value;
@@ -49,7 +49,6 @@ login = {
         )
         .catch(
             function(error) {
-                console.log(error.status);
                 login.displayError();
             }
         );
@@ -63,7 +62,6 @@ login = {
             errorElement.classList.add('alert', 'alert-danger');
             errorElement.id = 'errorLogin';
             errorElement.textContent = 'Identifiants invalides';
-            console.log(errorElement);
             modalBodyElement.appendChild(errorElement);
 
         }
@@ -91,6 +89,12 @@ login = {
             document.getElementById('registerLink').classList.add('hidden');
             document.getElementById('logoutLink').classList.remove('hidden');
             document.getElementById('reservationLink').classList.remove('hidden');
+        }
+    },
+
+    reserveButtonDisplay: function(e) {
+        if (!localStorage.getItem('token')) {
+            e.preventDefault();
         }
     }
 }
