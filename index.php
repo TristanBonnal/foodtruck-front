@@ -13,9 +13,9 @@
         <table class="table table-dark">
             <thead>
                 <tr>
-                    <th scope="col">Référence</th>
                     <th scope="col">Date réservation</th>
                     <th scope="col">Emplacement</th>
+                    <th scope="col">Référence</th>
                 </tr>
             </thead>
             <tbody id="reservationsRow">

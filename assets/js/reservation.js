@@ -70,13 +70,24 @@ reservation = {
         // Get rows if empty
         if (!tableElement.contains(tableElement.querySelector('.reservationRow'))) {
             for (let reservation of reservations) {
+                console.log(reservation);
                 let rowElement = document.createElement('tr');
                 rowElement.classList.add('reservationRow')
-                for (let i in reservation) {
-                    cellElement = document.createElement('td');
-                    cellElement.textContent = reservation[i];
-                    rowElement.appendChild(cellElement);
-                }
+
+                const bookedElement = document.createElement('td');
+                const bookedDate = new Date(reservation.bookedAt).toLocaleString('fr');
+                formatedDate = bookedDate.slice(0,10);
+                bookedElement.textContent = formatedDate;
+                rowElement.appendChild(bookedElement);
+                
+                const spotElement = document.createElement('td');
+                spotElement.textContent = reservation.spot;
+                rowElement.appendChild(spotElement);
+                
+                const refElement = document.createElement('td');
+                refElement.textContent = reservation.reference;
+                rowElement.appendChild(refElement);
+
                 tableElement.appendChild(rowElement);
 
             }
@@ -89,7 +100,6 @@ reservation = {
         // Form value
         const dateValue = document.getElementById('bookedDate').value;
         const spotValue = parseInt(document.getElementById('spot').value);
-        console.log(JSON.stringify({bookedAt: dateValue,spot: spotValue}));
         const token= JSON.parse(localStorage.getItem('token')).token;
         //API params
         let config = {
@@ -119,7 +129,6 @@ reservation = {
         )
         .then(
             function(reservations) {
-                console.log(reservations)
                 // reservation.displaySuccess()
             }
         )
