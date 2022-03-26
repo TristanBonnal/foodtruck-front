@@ -128,21 +128,47 @@ reservation = {
         )
         .catch(
             function(error) {
-                console.log(error)
+                return error.json();
             }
-        );
+        )
+        .then(
+            (errorMessage) => {
+                if (errorMessage) reservation.displayError(errorMessage);
+            }
+        )
+        ;
     },
 
     displaySuccess: function() {
         const reservationFormElement = document.getElementById('bookedDate');
+        const previousErrorElement = document.getElementById('errorReservation');
+        if (previousErrorElement) previousErrorElement.remove();
 
         if (document.getElementById('successReservation') == undefined) {
             const successElement = document.createElement('div');
             successElement.classList.add('alert', 'alert-success');
-            successElement.id = 'successLogin';
+            successElement.id = 'successReservation';
             successElement.textContent = 'Réservation ajoutée';
             reservationFormElement.after(successElement);
         }
+    },
+
+    displayError: function(errorMessage) {
+        const reservationFormElement = document.getElementById('bookedDate');
+        const previousErrorElement = document.getElementById('errorReservation');
+
+        
+        const errorElement = document.createElement('div');
+        errorElement.classList.add('alert', 'alert-danger');
+        errorElement.id = 'errorReservation';
+        errorElement.textContent = errorMessage;
+        if (!previousErrorElement) {
+            reservationFormElement.after(errorElement);
+        } else {
+            previousErrorElement.parentNode.replaceChild(errorElement, previousErrorElement);
+        }
+
     }
+
     
 }

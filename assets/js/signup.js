@@ -41,6 +41,7 @@ signup = {
         .then(
             function(content) {
                 // Auto login
+                document.getElementById('closeModal2').click();
                 login.checkLoginJWT('signupEmail', 'signupPassword');
             }
         )
