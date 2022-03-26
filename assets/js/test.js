@@ -1,5 +1,5 @@
 test = {
     init: function() {
-        console.log('test');
+        console.log('init test')
     }
 }

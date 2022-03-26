@@ -44,7 +44,7 @@ login = {
                 localStorage.setItem('token', JSON.stringify(token));
                 // login.displaySuccess();
                 login.navDisplay();
-                window.location.href = "/reservations.php"
+                window.location.href = "/"
             }
         )
         .catch(

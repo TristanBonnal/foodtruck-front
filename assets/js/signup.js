@@ -5,7 +5,7 @@ signup = {
     },
 
     register: function(e) {
-        e.preventDefault();
+        // e.preventDefault();
         // Form value
         const emailValue = document.getElementById('signupEmail').value;
         const lastnameValue = document.getElementById('signupLastname').value;
