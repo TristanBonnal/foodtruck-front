@@ -9,11 +9,39 @@
         </p>
     </section>
     <section class="hidden" id="reservationSection">
-        <h3 class="title">Vos réservations à venir</h3>
-        <p>Vous n'avez pas encore effectué de réservations</p>
-        <hr>
-        <h3 class="title">Effectuez une nouvelle réservation</h3>
-        <form>
+        <h3 class="title">Vos réservations</h3>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Référence</th>
+                    <th scope="col">Date réservation</th>
+                    <th scope="col">Emplacement</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3 class="title mt-5">Effectuez une nouvelle réservation</h3>
+        <form class="">
             <div class="mb-3">
             <label class="mb-2" for="spot" class="form-label">Emplacement</label>
             <select class="form-select">
