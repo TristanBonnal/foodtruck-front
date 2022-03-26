@@ -53,7 +53,9 @@ reservation = {
         )
         .then(
             function(reservations) {
-                reservation.setRow(reservations);
+                for (let item of reservations) {
+                    reservation.setRow(item);
+                }
             }
         )
         .catch(
@@ -62,33 +64,27 @@ reservation = {
         );
     },
 
-    setRow: function(reservations) {
+    setRow: function(reservationItem) {
         const tableElement = document.getElementById('reservationsRow');
 
-        // Get rows if empty
+        let rowElement = document.createElement('tr');
+        rowElement.classList.add('reservationRow')
 
-            for (let reservation of reservations) {
-                let rowElement = document.createElement('tr');
-                rowElement.classList.add('reservationRow')
+        const bookedElement = document.createElement('td');
+        const bookedDate = new Date(reservationItem.bookedAt).toLocaleString('fr');
+        formatedDate = bookedDate.slice(0,10);
+        bookedElement.textContent = formatedDate;
+        rowElement.appendChild(bookedElement);
+        
+        const spotElement = document.createElement('td');
+        spotElement.textContent = reservationItem.spot;
+        rowElement.appendChild(spotElement);
+        
+        const refElement = document.createElement('td');
+        refElement.textContent = reservationItem.reference;
+        rowElement.appendChild(refElement);
 
-                const bookedElement = document.createElement('td');
-                const bookedDate = new Date(reservation.bookedAt).toLocaleString('fr');
-                formatedDate = bookedDate.slice(0,10);
-                bookedElement.textContent = formatedDate;
-                rowElement.appendChild(bookedElement);
-                
-                const spotElement = document.createElement('td');
-                spotElement.textContent = reservation.spot;
-                rowElement.appendChild(spotElement);
-                
-                const refElement = document.createElement('td');
-                refElement.textContent = reservation.reference;
-                rowElement.appendChild(refElement);
-
-                tableElement.appendChild(rowElement);
-
-            }
-    
+        tableElement.appendChild(rowElement);
                 
     },
 
@@ -125,8 +121,9 @@ reservation = {
             }
         )
         .then(
-            function(reservations) {
-                reservation.displaySuccess()
+            function(reservationItem) {
+                reservation.displaySuccess();
+                reservation.setRow(reservationItem);
             }
         )
         .catch(
