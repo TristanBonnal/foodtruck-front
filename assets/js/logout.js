@@ -4,6 +4,7 @@ logout = {
        (console.log('logout init'));
     },
 
+    // Remove token and redirect to home
     deleteToken: function(e) {
         e.preventDefault();
         localStorage.clear();

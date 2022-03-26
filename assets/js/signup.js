@@ -4,6 +4,7 @@ signup = {
         document.getElementById('signupButton').addEventListener('click', this.register);
     },
 
+    // Create and signin new user
     register: function(e) {
         // Form value
         const emailValue = document.getElementById('signupEmail').value;
@@ -57,6 +58,8 @@ signup = {
         );
     },
 
+
+    // Display error message if form is invalid
     displayError: function(errorMessage) {
         const modalElement = document.getElementById('modalBodySignup');
         const previousErrorElement = document.getElementById('errorReservationSignup');

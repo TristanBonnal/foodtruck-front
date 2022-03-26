@@ -5,6 +5,7 @@ reservation = {
         document.getElementById('addReservationButton').addEventListener('click', this.addReservation)
     },
 
+    // Display reservations list + form if user is logged
     reservationHandler: function(e) {
         e.preventDefault();
         if (!localStorage.getItem('token')) {
@@ -16,6 +17,7 @@ reservation = {
         }
     },
 
+    // Prevent visitor to see reservations list and form 
     displayAlert: function() {
         if (document.getElementById('errorNotLoggedReservation') == undefined) {
             const introSectionElement = document.getElementById('introSection');
@@ -27,6 +29,7 @@ reservation = {
         }
     },
 
+    // Get all reservation by user via API
     fetchReservations: function() {
         const token= JSON.parse(localStorage.getItem('token')).token;
         //API params
@@ -64,6 +67,7 @@ reservation = {
         );
     },
 
+    // Create a row in table for one reservation
     setRow: function(reservationItem) {
         const tableElement = document.getElementById('reservationsRow');
 
@@ -88,6 +92,7 @@ reservation = {
                 
     },
 
+    // Add reservation to DB and DOM
     addReservation: function(e) {
         e.preventDefault();
         // Form value
@@ -139,6 +144,7 @@ reservation = {
         ;
     },
 
+    // Success message when adding reservation
     displaySuccess: function() {
         const reservationFormElement = document.getElementById('bookedDate');
         const previousErrorElement = document.getElementById('errorReservation');
@@ -153,6 +159,7 @@ reservation = {
         }
     },
 
+    // ErrorMessage when adding reservation
     displayError: function(errorMessage) {
         const reservationFormElement = document.getElementById('bookedDate');
         const previousErrorElement = document.getElementById('errorReservation');

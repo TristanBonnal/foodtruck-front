@@ -57,6 +57,7 @@ login = {
 
     },
 
+    // Display error into the form
     displayError: function() {
         if (document.getElementById('errorLogin') == undefined) {
             const modalBodyElement = document.querySelector('.modal-body');
