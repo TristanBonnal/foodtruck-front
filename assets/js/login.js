@@ -41,7 +41,6 @@ login = {
         .then(
             function(token) {
                 localStorage.setItem('token', JSON.stringify(token));
-                // login.displaySuccess();
                 login.navDisplay();
                 window.location.href = "/"
             }
@@ -65,20 +64,6 @@ login = {
         }
     },
 
-    displaySuccess: function() {
-        const modalBodyElement = document.querySelector('.modal-body');
-
-        if (document.getElementById('errorLogin')) {
-            document.getElementById('loginButton').remove();
-        }
-        if (document.getElementById('successLogin') == undefined) {
-            const successElement = document.createElement('div');
-            successElement.classList.add('alert', 'alert-success');
-            successElement.id = 'successLogin';
-            successElement.textContent = 'Connexion réussie';
-            modalBodyElement.appendChild(successElement);
-        }
-    },
 
     // Chande the nav-links if user is logged
     navDisplay: function() {

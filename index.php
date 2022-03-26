@@ -22,7 +22,7 @@
             </tbody>
         </table>
         <h3 class="title mt-5">Effectuez une nouvelle réservation</h3>
-        <form class="">
+        <form id="reservationForm">
             <div class="mb-3">
             <label class="mb-2" for="spot" class="form-label">Emplacement</label>
             <select class="form-select" id="spot">
@@ -34,7 +34,7 @@
             </div>
             <div class="mb-3">
                 <label class="mb-2" for="bookedDate" class="form-label">Date souhaitée</label>
-                <input type="date" class="form-control" id="bookedDate">
+                <input type="date" class="form-control mb-3" id="bookedDate">
             </div>
             <button type="submit" class="btn btn-secondary" id="addReservationButton">Valider</button>
         </form>

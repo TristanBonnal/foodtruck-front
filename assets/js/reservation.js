@@ -70,7 +70,6 @@ reservation = {
         // Get rows if empty
         if (!tableElement.contains(tableElement.querySelector('.reservationRow'))) {
             for (let reservation of reservations) {
-                console.log(reservation);
                 let rowElement = document.createElement('tr');
                 rowElement.classList.add('reservationRow')
 
@@ -129,7 +128,7 @@ reservation = {
         )
         .then(
             function(reservations) {
-                // reservation.displaySuccess()
+                reservation.displaySuccess()
             }
         )
         .catch(
@@ -137,6 +136,18 @@ reservation = {
                 console.log(error)
             }
         );
+    },
+
+    displaySuccess: function() {
+        const reservationFormElement = document.getElementById('bookedDate');
+
+        if (document.getElementById('successReservation') == undefined) {
+            const successElement = document.createElement('div');
+            successElement.classList.add('alert', 'alert-success');
+            successElement.id = 'successLogin';
+            successElement.textContent = 'Réservation ajoutée';
+            reservationFormElement.after(successElement);
+        }
     }
     
 }
