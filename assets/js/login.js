@@ -71,7 +71,6 @@ login = {
             document.getElementById('loginLink').classList.add('hidden');
             document.getElementById('registerLink').classList.add('hidden');
             document.getElementById('logoutLink').classList.remove('hidden');
-            document.getElementById('reservationLink').classList.remove('hidden');
         }
     },
 

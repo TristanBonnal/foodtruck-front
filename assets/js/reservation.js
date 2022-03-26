@@ -2,7 +2,6 @@ reservation = {
     init: function() {
         console.log('init reservation')
         document.getElementById('reservationButton').addEventListener('click', this.reservationHandler)
-        document.getElementById('reservationLink').addEventListener('click', this.reservationHandler)
         document.getElementById('addReservationButton').addEventListener('click', this.addReservation)
     },
 
@@ -14,7 +13,6 @@ reservation = {
             document.getElementById('reservationSection').classList.toggle('hidden');
             document.getElementById('introSection').classList.toggle('hidden');
             reservation.fetchReservations();
-            // reservation.displayTable();
         }
     },
 
@@ -68,7 +66,7 @@ reservation = {
         const tableElement = document.getElementById('reservationsRow');
 
         // Get rows if empty
-        if (!tableElement.contains(tableElement.querySelector('.reservationRow'))) {
+
             for (let reservation of reservations) {
                 let rowElement = document.createElement('tr');
                 rowElement.classList.add('reservationRow')
@@ -90,7 +88,7 @@ reservation = {
                 tableElement.appendChild(rowElement);
 
             }
-        }
+    
                 
     },
 

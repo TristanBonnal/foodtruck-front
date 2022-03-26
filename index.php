@@ -5,7 +5,7 @@
         <h1 class="title">Réservez en quelques clics !</h1>
         <p class="lead">Une fois inscrit, choisissez l'un de nos 7 emplacements, bénéfieciez d'une place par semaine et par foodtruck.</p>
         <p class="lead">
-            <a href="reservations.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="reservationButton">Réserver</a>
+            <a href="" class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="reservationButton">Réserver</a>
         </p>
     </section>
     <section class="hidden" id="reservationSection">
