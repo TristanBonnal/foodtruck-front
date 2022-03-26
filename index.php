@@ -25,7 +25,7 @@
         <form class="">
             <div class="mb-3">
             <label class="mb-2" for="spot" class="form-label">Emplacement</label>
-            <select class="form-select">
+            <select class="form-select" id="spot">
                 <option selected>Choisissez un emplacement</option>
                 <?php for ($i = 1; $i <= 7; $i++): ?>
                     <option value="1"><?= $i ?></option>
@@ -36,7 +36,7 @@
                 <label class="mb-2" for="bookedDate" class="form-label">Date souhaitée</label>
                 <input type="date" class="form-control" id="bookedDate">
             </div>
-            <button type="submit" class="btn btn-secondary">Valider</button>
+            <button type="submit" class="btn btn-secondary" id="addReservationButton">Valider</button>
         </form>
     </section>
 </main>

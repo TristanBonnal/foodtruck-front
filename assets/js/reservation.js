@@ -3,6 +3,7 @@ reservation = {
         console.log('init reservation')
         document.getElementById('reservationButton').addEventListener('click', this.reservationHandler)
         document.getElementById('reservationLink').addEventListener('click', this.reservationHandler)
+        document.getElementById('addReservationButton').addEventListener('click', this.addReservation)
     },
 
     reservationHandler: function(e) {
@@ -59,7 +60,6 @@ reservation = {
         )
         .catch(
             function(error) {
-                login.displayError();
             }
         );
     },
@@ -82,6 +82,52 @@ reservation = {
             }
         }
                 
+    },
+
+    addReservation: function(e) {
+        e.preventDefault();
+        // Form value
+        const dateValue = document.getElementById('bookedDate').value;
+        const spotValue = parseInt(document.getElementById('spot').value);
+        console.log(JSON.stringify({bookedAt: dateValue,spot: spotValue}));
+        const token= JSON.parse(localStorage.getItem('token')).token;
+        //API params
+        let config = {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-cache',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            }),
+            body: JSON.stringify({
+                bookedAt: dateValue,
+                spot: spotValue,
+            })
+        };
+        
+        // Consuming API
+        fetch(app.apiRootUrl + '/reservations', config)
+        .then(
+            function(response) {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw response;
+                }
+            }
+        )
+        .then(
+            function(reservations) {
+                console.log(reservations)
+                // reservation.displaySuccess()
+            }
+        )
+        .catch(
+            function(error) {
+                console.log(error)
+            }
+        );
     }
     
 }
