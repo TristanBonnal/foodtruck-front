@@ -16,7 +16,7 @@
   </head>
 
     <body class="d-flex h-100 text-white bg-dark">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="container d-flex w-100 h-100 p-5 mx-auto flex-column">
         <header class="mb-auto">
             <div>
             <h3 class="float-md-start mb-0 title"><i class="bi bi-truck"></i> Foodtruck Spots</h3>

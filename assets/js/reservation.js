@@ -30,7 +30,6 @@ reservation = {
 
     fetchReservations: function() {
         const token= JSON.parse(localStorage.getItem('token')).token;
-        console.log(token);
         //API params
         let config = {
             method: 'GET',
@@ -54,8 +53,8 @@ reservation = {
             }
         )
         .then(
-            function(content) {
-                console.log(content);
+            function(reservations) {
+                reservation.setRow(reservations);
             }
         )
         .catch(
@@ -63,6 +62,26 @@ reservation = {
                 login.displayError();
             }
         );
+    },
+
+    setRow: function(reservations) {
+        const tableElement = document.getElementById('reservationsRow');
+
+        // Get rows if empty
+        if (!tableElement.contains(tableElement.querySelector('.reservationRow'))) {
+            for (let reservation of reservations) {
+                let rowElement = document.createElement('tr');
+                rowElement.classList.add('reservationRow')
+                for (let i in reservation) {
+                    cellElement = document.createElement('td');
+                    cellElement.textContent = reservation[i];
+                    rowElement.appendChild(cellElement);
+                }
+                tableElement.appendChild(rowElement);
+
+            }
+        }
+                
     }
     
 }
