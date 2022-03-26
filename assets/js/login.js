@@ -42,7 +42,11 @@ login = {
             function(token) {
                 localStorage.setItem('token', JSON.stringify(token));
                 login.navDisplay();
-                window.location.href = "/"
+                document.getElementById('closeModal').click()
+            }
+        ).then(
+            () => {
+                document.getElementById('reservationButton').click();
             }
         )
         .catch(
