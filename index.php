@@ -1,12 +1,14 @@
 <?php require 'templates/header.tpl.php' ?>
 
-<main class="text-center" class="px-3 mb-">
-    <h1 class="title">Réservez en quelques clics !</h1>
-    <p class="lead">Une fois inscrit, choisissez l'un de nos 7 emplacements, bénéfieciez d'une place par semaine et par foodtruck.</p>
-    <p class="lead">
-        <a href="reservations.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="reserveButton">Réserver</a>
-    </p>
-    <section class="reservation hidden">
+<main class="text-center" class="px-3">
+    <section id="introSection">
+        <h1 class="title">Réservez en quelques clics !</h1>
+        <p class="lead">Une fois inscrit, choisissez l'un de nos 7 emplacements, bénéfieciez d'une place par semaine et par foodtruck.</p>
+        <p class="lead">
+            <a href="reservations.php" class="btn btn-lg btn-secondary fw-bold border-white bg-white" id="reservationButton">Réserver</a>
+        </p>
+    </section>
+    <section class="hidden" id="reservationSection">
         <h3 class="title">Vos réservations à venir</h3>
         <p>Vous n'avez pas encore effectué de réservations</p>
         <hr>

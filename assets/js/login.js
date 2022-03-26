@@ -3,7 +3,6 @@ login = {
         console.log('login init')
         this.navDisplay();
         document.getElementById('loginButton').addEventListener('click', this.login);
-        document.getElementById('reserveButton').addEventListener('click', this.reserveButtonDisplay)
     },
 
     login: function() {
@@ -63,7 +62,6 @@ login = {
             errorElement.id = 'errorLogin';
             errorElement.textContent = 'Identifiants invalides';
             modalBodyElement.appendChild(errorElement);
-
         }
     },
 
@@ -92,9 +90,4 @@ login = {
         }
     },
 
-    reserveButtonDisplay: function(e) {
-        if (!localStorage.getItem('token')) {
-            e.preventDefault();
-        }
-    }
 }
