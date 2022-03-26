@@ -58,7 +58,7 @@
                                 <h5 class="modal-title" id="ModalLabelConnexion">Inscription</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body" id="modalBodySignup">
                                 <form action="">
                                     <div class="mb-3">
                                         <label class="mb-2" for="InputEmail1" class="form-label">Adresse email</label>

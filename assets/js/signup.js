@@ -47,8 +47,29 @@ signup = {
         )
         .catch(
             function(error) {
-                
+                return error.json();
+            }
+        )
+        .then(
+            (errorMessage) => {
+                if (errorMessage) signup.displayError(errorMessage.message[1]);
             }
         );
+    },
+
+    displayError: function(errorMessage) {
+        const modalElement = document.getElementById('modalBodySignup');
+        const previousErrorElement = document.getElementById('errorReservationSignup');
+
+        
+        const errorElement = document.createElement('div');
+        errorElement.classList.add('alert', 'alert-danger');
+        errorElement.id = 'errorReservationSignup';
+        errorElement.textContent = errorMessage;
+        if (!previousErrorElement) {
+            modalElement.appendChild(errorElement);
+        } else {
+            previousErrorElement.parentNode.replaceChild(errorElement, previousErrorElement);
+        }
     }
 }

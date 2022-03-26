@@ -167,8 +167,6 @@ reservation = {
         } else {
             previousErrorElement.parentNode.replaceChild(errorElement, previousErrorElement);
         }
-
     }
 
-    
 }
