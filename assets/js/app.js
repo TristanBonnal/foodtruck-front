@@ -1,5 +1,5 @@
 const app = {
-    apiRootUrl: 'http://localhost:8000/api',
+    apiRootUrl: 'http://foodtruckapi.tristan-bonnal.fr/api',
 
     init: function(){
        login.init(); 
