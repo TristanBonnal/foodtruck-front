@@ -39,11 +39,13 @@ login = {
             }
         )
         .then(
+            //Saving token
             function(token) {
                 localStorage.setItem('token', JSON.stringify(token));
                 login.navDisplay();
                 document.getElementById('closeModal').click()
             }
+            // Manuel redirection to reservations
         ).then(
             () => {
                 document.getElementById('reservationButton').click();
