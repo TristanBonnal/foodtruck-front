@@ -46,3 +46,10 @@ a {
     display: none;
 }
 
+@media only screen and (max-width: 520px){
+    th:nth-child(3),
+    td:nth-child(3) {
+        display: none;
+    }
+}
+

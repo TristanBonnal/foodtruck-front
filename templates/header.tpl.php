@@ -19,7 +19,7 @@
     <div class="container d-flex w-100 h-100 p-5 mx-auto flex-column">
         <header class="mb-auto">
             <div>
-                <h3 class="float-md-start mb-0 title"><i class="bi bi-truck"></i> Foodtruck Spots</h3>
+                <h3 class="text-center text-mb-start float-md-start mb-3 title"><i class="bi bi-truck"></i> Foodtruck Spots</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link" aria-current="page" href="/">Accueil</a>
                     <a type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#Modal" id="loginLink">Connexion</a>
