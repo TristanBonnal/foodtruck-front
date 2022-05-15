@@ -1,4 +1,4 @@
-<footer class="mt-auto text-white-50">
+<footer class="mt-5 text-white-50">
             <p class="text-center">
                 <a class="footer-link" href="/">Foodtrucks</a> | 
                 <a class="footer-link" href="/">Contact</a> | 
