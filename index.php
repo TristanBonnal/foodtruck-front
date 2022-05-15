@@ -30,7 +30,7 @@
             <select class="form-select" id="spot">
                 <option selected>Choisissez un emplacement</option>
                 <?php for ($i = 1; $i <= 7; $i++): ?>
-                    <option value="1"><?= $i ?></option>
+                    <option value="<?= $i ?>"><?= $i ?></option>
                 <?php endfor ?>
             </select>
             </div>
