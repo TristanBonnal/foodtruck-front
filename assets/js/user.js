@@ -39,11 +39,5 @@ user = {
             function(error) {
             }
         );
-    },
-
-    displayWelcome: function() {
-        console.log('coucou user');
-        const welcomeElement = document.getElementById('welcome');
-        welcomeElement.textContent = 'Bienvenue';
     }
 }
