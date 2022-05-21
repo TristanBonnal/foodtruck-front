@@ -56,7 +56,6 @@ login = {
                 login.displayError();
             }
         );
-
     },
 
     // Display error into the form

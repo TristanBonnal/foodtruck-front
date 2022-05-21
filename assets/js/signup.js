@@ -64,7 +64,6 @@ signup = {
         const modalElement = document.getElementById('modalBodySignup');
         const previousErrorElement = document.getElementById('errorReservationSignup');
 
-        
         const errorElement = document.createElement('div');
         errorElement.classList.add('alert', 'alert-danger');
         errorElement.id = 'errorReservationSignup';

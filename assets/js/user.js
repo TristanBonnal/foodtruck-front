@@ -39,5 +39,27 @@ user = {
             function(error) {
             }
         );
+    },
+
+    // If there is a token in the localstorage logout if is expired
+    checkTokenValidity: function() {
+        const tokenJson =  JSON.parse(localStorage.getItem('token'));
+        if (tokenJson) {
+            if (this.parseJwt(tokenJson.token).exp < Date.now()/1000) {
+                localStorage.clear();
+                window.location.href = "/"
+            }
+        }
+    },
+
+    // Decoding JWT to get the expiracy date
+    parseJwt: function (token) {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        return JSON.parse(jsonPayload);
     }
 }
