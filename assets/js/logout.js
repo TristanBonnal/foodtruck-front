@@ -1,4 +1,4 @@
-logout = {
+const logout = {
     init: function() {
         const logoutElement = document.getElementById('logoutLink').addEventListener('click', this.deleteToken);
        (console.log('logout init'));

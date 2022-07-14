@@ -1,4 +1,4 @@
-login = {
+const login = {
     init: function() {
         console.log('login init')
         this.navDisplay();
